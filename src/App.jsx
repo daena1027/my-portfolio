@@ -3,6 +3,7 @@ import LoadingScreen from './components/LoadingScreen';
 import Sky from './sections/Sky';
 import Land from './sections/Land';
 import Sea from './sections/Sea';
+import SectionNav from './components/SectionNav';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -16,10 +17,17 @@ function App() {
     <>
       {loading && <LoadingScreen />}
 
-      <main className={`${loading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}>
+      <main
+        className={`${
+          loading ? 'opacity-0' : 'opacity-100'
+        } transition-opacity duration-1000
+          snap-y snap-mandatory
+          h-screen overflow-y-scroll`}
+      >
         <Sky />
         <Land />
         <Sea />
+        <SectionNav />
       </main>
     </>
   );

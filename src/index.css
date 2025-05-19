@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f2f1f1;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,4 +15,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-align: start;
+}
 

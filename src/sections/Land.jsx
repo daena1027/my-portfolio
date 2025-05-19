@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 export default function Land() {
   return (
     <motion.section
+      id="land"
       className="min-h-screen bg-gradient-to-b from-green-400 to-lime-200 flex items-center justify-center"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
