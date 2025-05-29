@@ -7,7 +7,7 @@ export default function SectionNav() {
   const buttonRefs = useRef([]);
   const [focusedIndex, setFocusedIndex] = useState(null);
 
-  // Scroll tracking to highlight active section
+  // Track scroll position and update active section accordingly
   useEffect(() => {
     const onScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 2;
@@ -28,21 +28,26 @@ export default function SectionNav() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Handle keyboard arrow keys
+  // Handle keyboard navigation between dots
   const handleKeyDown = (e, i) => {
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       const next = (i + 1) % sections.length;
       buttonRefs.current[next]?.focus();
       setFocusedIndex(next);
+      setActive(sections[next]);
+      document.getElementById(sections[next])?.scrollIntoView({ behavior: 'smooth' });
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       const prev = (i - 1 + sections.length) % sections.length;
       buttonRefs.current[prev]?.focus();
       setFocusedIndex(prev);
+      setActive(sections[prev]);
+      document.getElementById(sections[prev])?.scrollIntoView({ behavior: 'smooth' });
     } else if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
       document.getElementById(sections[i])?.scrollIntoView({ behavior: 'smooth' });
+      setActive(sections[i]);
     }
   };
 
@@ -62,6 +67,7 @@ export default function SectionNav() {
             hover:bg-gray-600 transition`}
           onClick={() => {
             document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+            setActive(section);
           }}
           onKeyDown={(e) => handleKeyDown(e, i)}
           onFocus={() => setFocusedIndex(i)}
