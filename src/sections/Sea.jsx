@@ -13,7 +13,7 @@ export default function Sea() {
           // #1e3a8a = blue-900
         }}
       >
-        <h2 className="text-5xl font-bold text-white"></h2>
+        <h2 className="text-5xl font-bold text-white">Sea Section</h2>
       </section>
     </>
   );
