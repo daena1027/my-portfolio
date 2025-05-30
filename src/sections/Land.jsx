@@ -5,7 +5,7 @@ export default function Land() {
   return (
     <motion.section
       id="land"
-      className="min-h-screen bg-gradient-to-b from-green-400 via-teal-600 to-cyan-500 text-white px-6 flex items-start justify-center pt-32 pb-16"
+      className="min-h-screen bg-gradient-to-b from-green-300 via-teal-600 to-cyan-500 text-white px-6 flex items-start justify-center pt-32 pb-16"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}

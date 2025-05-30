@@ -15,7 +15,6 @@ export default function Sky() {
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white drop-shadow-lg max-w-3xl leading-relaxed">
         “My dream is to help build systems that <span className="whitespace-nowrap">protect and connect</span> the world — by land, sea, and sky.”
       </h1>
-
     </motion.section>
   );
 }
