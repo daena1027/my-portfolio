@@ -70,9 +70,9 @@ export default function Land() {
         </div>
 
         {/* Scroll Button */}
-        <a href="#timeline">
+        <a href="#projects" className="mt-8">
           <button className="mt-12 px-6 py-3 bg-white text-blue-600 font-medium rounded-full shadow-md hover:bg-blue-100 transition">
-            ↓ Next: Timeline
+            ↓ Dive into My Projects
           </button>
         </a>
       </div>
