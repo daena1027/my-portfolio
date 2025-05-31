@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaGitAlt, FaGithub } from 'react-icons/fa';
-import { SiTailwindcss, SiFirebase, SiMongodb } from 'react-icons/si';
+import {
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs,
+  FaGitAlt, FaGithub, FaPython
+} from 'react-icons/fa';
+import {
+  SiTailwindcss, SiFirebase, SiMongodb, SiFigma, SiExpo
+} from 'react-icons/si';
+import { TbMapSearch } from 'react-icons/tb'; // For GIS
 
 export default function Land() {
   return (
@@ -26,47 +32,35 @@ export default function Land() {
         <div className="mt-12">
           <h3 className="text-2xl font-semibold mb-4">Tech Stack</h3>
           <div className="grid grid-cols-4 sm:grid-cols-5 gap-6 text-4xl justify-items-center">
-            <div className="flex flex-col items-center space-y-1">
-              <FaHtml5 className="text-orange-500" />
-              <span className="text-sm">HTML</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaCss3Alt className="text-blue-500" />
-              <span className="text-sm">CSS</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaJs className="text-yellow-400" />
-              <span className="text-sm">JavaScript</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaReact className="text-cyan-300" />
-              <span className="text-sm">React</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <SiTailwindcss className="text-teal-300" />
-              <span className="text-sm">Tailwind</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaNodeJs className="text-green-300" />
-              <span className="text-sm">Node.js</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <SiMongodb className="text-green-200" />
-              <span className="text-sm">MongoDB</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <SiFirebase className="text-orange-300" />
-              <span className="text-sm">Firebase</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaGitAlt className="text-orange-400" />
-              <span className="text-sm">Git</span>
-            </div>
-            <div className="flex flex-col items-center space-y-1">
-              <FaGithub className="text-white" />
-              <span className="text-sm">GitHub</span>
-            </div>
+            {/* Web Dev */}
+            <IconItem icon={<FaHtml5 className="text-orange-500" />} label="HTML" />
+            <IconItem icon={<FaCss3Alt className="text-blue-500" />} label="CSS" />
+            <IconItem icon={<FaJs className="text-yellow-400" />} label="JavaScript" />
+            <IconItem icon={<FaReact className="text-cyan-300" />} label="React" />
+            <IconItem icon={<SiTailwindcss className="text-teal-300" />} label="Tailwind" />
+            <IconItem icon={<FaNodeJs className="text-green-300" />} label="Node.js" />
+            <IconItem icon={<SiMongodb className="text-green-200" />} label="MongoDB" />
+            <IconItem icon={<SiFirebase className="text-orange-300" />} label="Firebase" />
+            <IconItem icon={<FaGitAlt className="text-orange-400" />} label="Git" />
+            <IconItem icon={<FaGithub className="text-white" />} label="GitHub" />
+            {/* New tools */}
+            <IconItem icon={<FaPython className="text-yellow-300" />} label="Python" />
+            <IconItem icon={<SiFigma className="text-pink-300" />} label="Figma" />
+            <IconItem icon={<TbMapSearch className="text-white" />} label="GIS (QGIS/ArcGIS)" />
+            <IconItem icon={<SiExpo className="text-gray-300" />} label="Expo" />
           </div>
+        </div>
+
+        {/* Soft Skills */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-semibold mb-4">Soft Skills</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base text-white/90 list-disc list-inside pl-2">
+            <li>Project planning & coordination</li>
+            <li>Cross-cultural communication (English & Khmer)</li>
+            <li>User experience (UX) research</li>
+            <li>Problem-solving & creativity</li>
+            <li>Teamwork and leadership</li>
+          </ul>
         </div>
 
         {/* Scroll Button */}
@@ -77,5 +71,15 @@ export default function Land() {
         </a>
       </div>
     </motion.section>
+  );
+}
+
+// Small helper component to reduce repetition
+function IconItem({ icon, label }) {
+  return (
+    <div className="flex flex-col items-center space-y-1">
+      {icon}
+      <span className="text-sm">{label}</span>
+    </div>
   );
 }
