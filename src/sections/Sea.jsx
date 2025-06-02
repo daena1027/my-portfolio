@@ -39,7 +39,7 @@ const projects = [
     challenge: 'Designing an engaging site that boosts bookings and engagement.',
     collaborators: 'Solo project',
     tech: 'React, Vite, Tailwind CSS',
-    image: '/images/campground.jpg',
+    image: '/images/MapleLakeCampLogo.png', // 👈 Uses your actual logo
     demo: 'https://your-demo-link.com/campground',
   },
 ];
