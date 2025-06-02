@@ -100,10 +100,10 @@ export default function Land() {
           <h3 className="text-2xl font-semibold mb-4">Soft Skills</h3>
           <ul className="flex flex-col gap-2 text-base text-white/90 list-disc list-inside pl-2">
             <li>Project planning & coordination</li>
-            <li>Cross-cultural communication (English & Khmer)</li>
             <li>User experience (UX) research</li>
             <li>Problem-solving & creativity</li>
             <li>Teamwork and leadership</li>
+            <li>Bilingual (English & Khmer)</li>
           </ul>
         </div>
 
