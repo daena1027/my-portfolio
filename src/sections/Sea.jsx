@@ -1,43 +1,46 @@
 import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const projects = [
   {
     title: 'Sustainability Challenge App',
-    summary: 'Gamified platform encouraging eco-friendly habits.',
+    description: 'A community-driven platform encouraging sustainable habits through gamified challenges.',
     role: 'Full-stack developer, UI/UX design',
+    challenge: 'Engaging users in consistent eco-friendly habits with a fun gamification system.',
+    collaborators: 'Worked solo on development and design.',
     tech: 'React, Firebase, Tailwind CSS',
-    impact: 'Motivated users to adopt eco-friendly behaviors through daily challenges.',
-    image: '/images/sustainability.png',
-    tags: ['Sustainability', 'Gamification'],
+    image: '/images/sustainability-challenge.jpg',
+    demo: 'https://your-demo-link.com/sustainability',
   },
   {
-    title: 'Bilingual CS & Space Quiz App',
-    summary: 'Fun, accessible bilingual STEM learning in English and Khmer.',
+    title: 'Bilingual Computer Science & Space Quiz App',
+    description: 'An educational quiz app in English and Khmer, making learning fun and accessible.',
     role: 'Lead developer',
+    challenge: 'Creating a bilingual app that supports English and Khmer seamlessly.',
+    collaborators: 'Collaborated with educators for content accuracy.',
     tech: 'React Native, Expo, Firebase',
-    impact: 'Promoted bilingual education and STEM in underserved communities.',
-    image: '/images/quizapp.png',
-    tags: ['Education', 'Bilingual', 'Mobile'],
+    image: '/images/bilingual-quiz-app.jpg',
+    demo: 'https://your-demo-link.com/quiz',
   },
   {
     title: 'Museum Finder Web App',
-    summary: 'Discover museums and cultural sites easily.',
+    description: 'A user-friendly web app to discover museums and cultural sites with detailed info and search filters.',
     role: 'Frontend developer, UX research',
-    tech: 'React, REST APIs, Tailwind CSS',
-    impact: 'Enhanced access to cultural resources and tourism info.',
-    image: '/images/museum.png',
-    tags: ['Culture', 'Tourism', 'UX'],
+    challenge: 'Building an intuitive search and filtering experience for diverse users.',
+    collaborators: 'Worked with a small UX team.',
+    tech: 'React, Tailwind CSS, REST APIs',
+    image: '/images/museum-finder.jpg',
+    demo: 'https://your-demo-link.com/museum-finder',
   },
   {
-    title: 'Campground Website',
-    summary: 'Modern site for a real Minnesota campground.',
+    title: 'Campground Website (Minnesota)',
+    description: 'A clean, responsive website showcasing a real campground with booking and information features.',
     role: 'Web designer and developer',
+    challenge: 'Designing an engaging site that boosts bookings and engagement.',
+    collaborators: 'Solo project',
     tech: 'React, Vite, Tailwind CSS',
-    impact: 'Improved visibility and engagement for the campground.',
-    image: '/images/campground.png',
-    tags: ['Small Business', 'Design'],
+    image: '/images/campground.jpg',
+    demo: 'https://your-demo-link.com/campground',
   },
 ];
 
@@ -46,76 +49,87 @@ export default function Sea() {
 
   return (
     <>
-      <div style={{ marginTop: '-4rem' }} />
       <section
         id="sea"
-        className="min-h-screen pt-16 pb-24 px-6 text-white"
+        className="min-h-screen flex flex-col items-center justify-start pt-24 px-6"
         style={{
-          marginTop: '-4rem',
           background: 'linear-gradient(to bottom, #2563eb 0%, #1e40af 50%, #1e3a8a 100%)',
         }}
       >
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-12">Dive into My Projects</h2>
-        </div>
+        <h2 className="text-5xl font-bold text-white mb-12">Dive into My Projects</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl w-full">
+          {projects.map((proj, i) => (
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg cursor-pointer hover:bg-white/20 transition duration-300"
-              onClick={() => setSelectedProject(project)}
+              key={i}
+              className="bg-blue-500 rounded-lg shadow-lg cursor-pointer overflow-hidden hover:shadow-2xl transition"
+              onClick={() => setSelectedProject(proj)}
+              whileHover={{ scale: 1.05 }}
+              layoutId={`card-container-${i}`}
             >
               <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-40 object-cover rounded-lg mb-4"
+                src={proj.image}
+                alt={`${proj.title} screenshot`}
+                className="w-full h-40 object-cover"
               />
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-white/80 text-sm mt-2">{project.summary}</p>
-              <div className="flex gap-2 mt-3 flex-wrap">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="bg-white/20 px-2 py-1 rounded-full text-xs text-white"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-white">{proj.title}</h3>
+                <p className="text-sm text-blue-200 mt-2">{proj.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Modal */}
-        <Dialog
-          open={!!selectedProject}
-          onClose={() => setSelectedProject(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
-        >
-          <Dialog.Panel className="bg-white/10 backdrop-blur-xl text-white max-w-xl w-full p-6 rounded-2xl shadow-2xl border border-white/20">
-            {selectedProject && (
-              <>
-                <DialogTitle className="text-2xl font-bold mb-2">
-                  {selectedProject.title}
-                </DialogTitle>
-                <p className="text-sm text-white/90 mb-4">{selectedProject.summary}</p>
-                <div className="space-y-2 text-sm text-white/80">
-                  <p><span className="font-semibold">Role:</span> {selectedProject.role}</p>
-                  <p><span className="font-semibold">Tech:</span> {selectedProject.tech}</p>
-                  <p><span className="font-semibold">Impact:</span> {selectedProject.impact}</p>
-                </div>
+        <AnimatePresence>
+          {selectedProject && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 px-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+            >
+              <motion.div
+                className="bg-gradient-to-br from-blue-800 to-blue-700 rounded-xl max-w-xl w-full p-8 relative shadow-2xl text-white"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                onClick={e => e.stopPropagation()}
+              >
                 <button
+                  className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-blue-300"
                   onClick={() => setSelectedProject(null)}
-                  className="mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-full transition"
+                  aria-label="Close modal"
                 >
-                  Close
+                  &times;
                 </button>
-              </>
-            )}
-          </Dialog.Panel>
-        </Dialog>
+
+                <h3 className="text-3xl font-bold mb-4">{selectedProject.title}</h3>
+                <p className="mb-4 italic text-blue-300">{selectedProject.description}</p>
+
+                <div className="space-y-3 text-white/90 text-sm">
+                  <p><span className="font-semibold">Role:</span> {selectedProject.role}</p>
+                  <p><span className="font-semibold">Challenge:</span> {selectedProject.challenge}</p>
+                  <p><span className="font-semibold">Collaborators:</span> {selectedProject.collaborators}</p>
+                  <p><span className="font-semibold">Tech:</span> {selectedProject.tech}</p>
+                  {selectedProject.demo && (
+                    <p>
+                      <span className="font-semibold">Demo:</span>{' '}
+                      <a
+                        href={selectedProject.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-blue-300"
+                      >
+                        Live Demo
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
     </>
   );
