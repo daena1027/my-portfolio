@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function Divider({ type }) {
   if (type === 'flight') {
     return (
-      <section className="relative h-40 bg-gradient-to-b from-blue-260 to-green-400 overflow-hidden">
+      <section className="relative h-40 bg-gradient-to-b from-blue-260 to-green-300 overflow-hidden">
         {/* Elegant drifting cloud SVGs - could also change green to 300 to flow better*/}
         <motion.svg
           className="absolute top-6 left-0 w-48 h-24 opacity-50"

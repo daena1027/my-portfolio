@@ -16,7 +16,7 @@ export default function Land() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <div className="-mt-15 max-w-3xl text-white/90 text-base sm:text-lg leading-relaxed space-y-6">
+      <div className="-mt-25 max-w-3xl text-white/90 text-base sm:text-lg leading-relaxed space-y-6">
         {/* Intro */}
         <p className="text-sm sm:text-base text-white/90">
           Creative technologist | Advocate for tech for good
