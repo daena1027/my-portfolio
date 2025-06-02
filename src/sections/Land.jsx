@@ -16,14 +16,14 @@ export default function Land() {
       transition={{ duration: 1 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-3xl text-white/90 text-base sm:text-lg leading-relaxed space-y-6">
+      <div className="-mt-15 max-w-3xl text-white/90 text-base sm:text-lg leading-relaxed space-y-6">
         {/* Intro */}
         <p className="text-sm sm:text-base text-white/90">
           Creative technologist | Advocate for tech for good
         </p>
-        <h2 className="text-3xl sm:text-4xl font-semibold text-white">Hi, I’m Daena</h2>
+        <h2 className="text-3xl sm:text-4xl font-semibold text-white">Hi, I'm Daena</h2>
         <p>
-          I’m a software engineering student with a passion for leveraging technology to make a positive impact.
+          I'm a software engineering student with a passion for leveraging technology to make a positive impact.
           Driven by curiosity and a commitment to social good, I enjoy blending creativity and problem-solving
           to develop solutions that matter. At the heart of my work is a single goal: using technology to serve communities and the planet.
         </p>
