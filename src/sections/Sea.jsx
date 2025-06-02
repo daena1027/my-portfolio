@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'Sustainability Challenge App',
     description: 'A community-driven platform encouraging sustainable habits through gamified challenges.',
-    role: 'Full-stack developer, UI/UX design',
+    role: 'Full-stack developer, UI/UX design, Product Owner',
     challenge: 'Engaging users in consistent eco-friendly habits with a fun gamification system.',
     collaborators: 'Worked solo on development and design.',
     tech: 'React, Firebase, Tailwind CSS',
@@ -25,7 +25,7 @@ const projects = [
   {
     title: 'Museum Finder Web App',
     description: 'A user-friendly web app to discover museums and cultural sites with detailed info and search filters.',
-    role: 'Frontend developer, UX research',
+    role: 'Frontend developer, Project manager',
     challenge: 'Building an intuitive search and filtering experience for diverse users.',
     collaborators: 'Worked with a small UX team.',
     tech: 'React, Tailwind CSS, REST APIs',
