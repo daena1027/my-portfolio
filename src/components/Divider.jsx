@@ -57,7 +57,7 @@ export default function Divider({ type }) {
           preserveAspectRatio="none"
           initial={{ x: 0 }}
           animate={{ x: [-20, 20, -20] }}
-          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         >
           <path
             fill="#2563eb" // slightly darker blue matching sea start
