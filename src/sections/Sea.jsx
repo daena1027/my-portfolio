@@ -9,7 +9,7 @@ const projects = [
     challenge: 'Engaging users in consistent eco-friendly habits with a fun gamification system.',
     collaborators: 'Worked solo on development and design.',
     tech: 'React, Firebase, Tailwind CSS',
-    image: '/images/sustainability-challenge.jpg',
+    image: '/images/EKOLogo.png',
     demo: 'https://your-demo-link.com/sustainability',
   },
   {
@@ -70,7 +70,7 @@ export default function Sea() {
               <img
                 src={proj.image}
                 alt={`${proj.title} screenshot`}
-                className="w-full h-40 object-cover"
+                className="w-full h-40 object-contain bg-white p-4 rounded-t-lg"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold text-white">{proj.title}</h3>
